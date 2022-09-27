@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -14,7 +15,9 @@ class _LoginPageState extends State<LoginPage> {
         appBar: AppBar(title: const Text("Login Page")),
         body: Center(
             child: ElevatedButton(
-          onPressed: () {},
+          onPressed: () {
+            Modular.to.navigate("/product/");
+          },
           child: const Text("Logar"),
         )));
   }
