@@ -11,7 +11,17 @@ class ProductModule extends Module {
   //configuração de página qualificada para navegação.
   @override
   List<ModularRoute> get routes => [
-        ChildRoute('/', child: (context, args) => const ProductPage()),
+        ChildRoute('/',
+            child: (context, args) => const ProductPage(),
+            transition: TransitionType.noTransition,
+            children: [
+              ChildRoute('/red',
+                  child: (context, args) => Container(color: Colors.red)),
+              ChildRoute('/blue',
+                  child: (context, args) => Container(color: Colors.blue)),
+              ChildRoute('/green',
+                  child: (context, args) => Container(color: Colors.green)),
+            ]),
         /*ChildRoute('/list',
             child: (context, args) =>
                 ListProductPage(id: args.queryParams['id'].toString())),*/
