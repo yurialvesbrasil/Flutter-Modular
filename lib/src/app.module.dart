@@ -15,6 +15,10 @@ class AppModule extends Module {
   List<ModularRoute> get routes => [
         ChildRoute('/', child: (context, args) => const SplashPage()),
         ModuleRoute('/auth', module: AuthModule()),
-        ModuleRoute('/product', module: ProductModule(), guards: [AuthGuard()])
+        ModuleRoute('/product', module: ProductModule(), guards: [AuthGuard()]),
+        WildcardRoute(
+            child: (context, args) => const Scaffold(
+                  body: Center(child: Text("[404] Página não existe.")),
+                ))
       ];
 }
