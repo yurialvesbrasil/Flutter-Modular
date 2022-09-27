@@ -16,6 +16,7 @@ class AppModule extends Module {
         ChildRoute('/', child: (context, args) => const SplashPage()),
         ModuleRoute('/auth', module: AuthModule()),
         ModuleRoute('/product', module: ProductModule(), guards: [AuthGuard()]),
+        RedirectRoute('/home', to: '/'),
         WildcardRoute(
             child: (context, args) => const Scaffold(
                   body: Center(child: Text("[404] Página não existe.")),

@@ -19,34 +19,52 @@ class _ProductPageState extends State<ProductPage> {
               color: Colors.blue[100],
               child: SizedBox(
                 width: MediaQuery.of(context).size.width * 0.2,
-                child: Column(
-                  children: [
-                    const SizedBox(
-                      height: 20,
-                    ),
-                    ListTile(
-                      title: const Text("Red"),
-                      selectedColor: Colors.brown[300],
-                      onTap: () {
-                        Modular.to.navigate('./red');
-                      },
-                    ),
-                    ListTile(
-                      title: const Text("Blue"),
-                      selectedColor: Colors.brown[300],
-                      onTap: () {
-                        Modular.to.navigate('./blue');
-                      },
-                    ),
-                    ListTile(
-                      title: const Text("Green"),
-                      selectedColor: Colors.brown[300],
-                      onTap: () {
-                        Modular.to.navigate('./green');
-                      },
-                    )
-                  ],
-                ),
+                child: NavigationListener(builder: ((context, child) {
+                  return Column(
+                    children: [
+                      const SizedBox(
+                        height: 20,
+                      ),
+                      Container(
+                        color: Modular.to.path.endsWith('/red')
+                            ? Colors.blue[900]
+                            : Colors.transparent,
+                        child: ListTile(
+                          title: const Text("Red"),
+                          selected: Modular.to.path.endsWith('/red'),
+                          selectedColor: Colors.white,
+                          onTap: () {
+                            Modular.to.navigate('./red');
+                          },
+                        ),
+                      ),
+                      Container(
+                          color: Modular.to.path.endsWith('/blue')
+                              ? Colors.blue[900]
+                              : Colors.transparent,
+                          child: ListTile(
+                            title: const Text("Blue"),
+                            selected: Modular.to.path.endsWith('/blue'),
+                            selectedColor: Colors.white,
+                            onTap: () {
+                              Modular.to.navigate('./blue');
+                            },
+                          )),
+                      Container(
+                          color: Modular.to.path.endsWith('/green')
+                              ? Colors.blue[900]
+                              : Colors.transparent,
+                          child: ListTile(
+                            title: const Text("Green"),
+                            selected: Modular.to.path.endsWith('/green'),
+                            selectedColor: Colors.white,
+                            onTap: () {
+                              Modular.to.navigate('./green');
+                            },
+                          ))
+                    ],
+                  );
+                })),
               ),
             ),
             const Expanded(child: RouterOutlet()),
