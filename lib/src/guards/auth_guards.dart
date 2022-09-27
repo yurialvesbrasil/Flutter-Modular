@@ -7,6 +7,6 @@ class AuthGuard extends RouteGuard {
 
   @override
   FutureOr<bool> canActivate(String path, ParallelRoute route) {
-    return false;
+    return true;
   }
 }
