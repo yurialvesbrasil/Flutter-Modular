@@ -10,9 +10,13 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-        home: Scaffold(
-      body: Center(child: Text("Home Screend")),
-    ));
+    return MaterialApp(
+        title: "Flutter Moduler",
+        theme: ThemeData(
+          primarySwatch: Colors.blue,
+        ),
+        home: const Scaffold(
+          body: Center(child: Text("Home Screend")),
+        ));
   }
 }
