@@ -26,18 +26,21 @@ class _ProductPageState extends State<ProductPage> {
                     ),
                     ListTile(
                       title: const Text("Red"),
+                      selectedColor: Colors.brown[300],
                       onTap: () {
                         Modular.to.navigate('./red');
                       },
                     ),
                     ListTile(
                       title: const Text("Blue"),
+                      selectedColor: Colors.brown[300],
                       onTap: () {
                         Modular.to.navigate('./blue');
                       },
                     ),
                     ListTile(
                       title: const Text("Green"),
+                      selectedColor: Colors.brown[300],
                       onTap: () {
                         Modular.to.navigate('./green');
                       },
