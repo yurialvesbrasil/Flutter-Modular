@@ -1,5 +1,5 @@
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:modular_flutter/src/modules/auth/auth_module.dart';
+import 'package:modular_flutter/src/modules/auth/auth.module.dart';
 import 'package:modular_flutter/src/splash_page.dart';
 
 class AppModule extends Module {

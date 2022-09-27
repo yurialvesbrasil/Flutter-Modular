@@ -1,5 +1,3 @@
-import 'dart:html';
-
 import 'package:flutter_modular/flutter_modular.dart';
 import 'views/login.page.dart';
 
